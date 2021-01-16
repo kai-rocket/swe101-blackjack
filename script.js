@@ -143,7 +143,7 @@ var convertHandToString = function (hand) {
 };
 
 var getDefaultOutput = function () {
-  return `Player has hand ${convertHandToString(playerHand)} with sum ${getHandSum(playerHand)}. <br>
+  return `Player has hand ${convertHandToString(playerHand)} with sum ${getHandSum(playerHand)}.
     Computer has hand ${convertHandToString(computerHand)} with sum ${getHandSum(computerHand)}.`;
 };
 
@@ -168,7 +168,7 @@ var main = function (input) {
     if (isBlackjack(computerHand)) {
       gameOver = true;
       // Computer wins, return
-      return `${getDefaultOutput()} <br>
+      return `${getDefaultOutput()}
         Computer has Blackjack and wins. Please refresh to play again.`;
     }
 
@@ -176,12 +176,12 @@ var main = function (input) {
     if (isBlackjack(playerHand)) {
       gameOver = true;
       // Player wins, return
-      return `${getDefaultOutput()} <br>
+      return `${getDefaultOutput()}
         Player has Blackjack and wins. Please refresh to play again.`;
     }
 
     // The cards are displayed to the user.
-    return `${getDefaultOutput()} <br>
+    return `${getDefaultOutput()}
       Please enter "hit" or "stand", then press Submit`;
   }
 
@@ -197,7 +197,7 @@ var main = function (input) {
       // If bust, show player that she busts
       if (getHandSum(playerHand) > sumLimit) {
         gameOver = true;
-        return `${getDefaultOutput()} <br>
+        return `${getDefaultOutput()}
           Player has busted and loses. Please refresh to play again.`;
       }
     }
@@ -218,7 +218,7 @@ var main = function (input) {
     // If bust, show computer that she busts
     if (computerHandSum > sumLimit) {
       gameOver = true;
-      return `${getDefaultOutput()} <br>
+      return `${getDefaultOutput()}
       Computer has busted and loses. Please refresh to play again.`;
     }
   }
@@ -229,17 +229,17 @@ var main = function (input) {
     gameOver = true;
     // If player hand sum is greater than computer hand sum, player wins!
     if (getHandSum(playerHand) > computerHandSum) {
-      return `${getDefaultOutput()} <br>
+      return `${getDefaultOutput()}
         Player wins! Please refresh to play again.`;
     }
     // Else, computer wins
-    return `${getDefaultOutput()} <br>
+    return `${getDefaultOutput()}
       Computer wins! Please refresh to play again.`;
   }
 
   // If game is not yet over, show current game status
-  return `${getDefaultOutput()} <br>
-    playerHasChosenToStand is ${playerHasChosenToStand} <br>
-    If player has not yet chosen to stand, please enter "hit" or "stand". <br>
+  return `${getDefaultOutput()}
+    playerHasChosenToStand is ${playerHasChosenToStand}
+    If player has not yet chosen to stand, please enter "hit" or "stand".
     Else, press Submit to see Computer's next move.`;
 };
